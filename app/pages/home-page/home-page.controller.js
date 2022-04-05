@@ -7,18 +7,13 @@ function homePageController(Employees) {
   homePageVm.employees = [];
 
   activate();
-  testfunc();
 
   function activate() {
     Employees.getEmployees()
       .then(({
         data,
       }) => {
-        homePageVm.employees = homePageVm.employees.concat(data.employees);
+        // homePageVm.employees = homePageVm.employees.concat(data.employees);
       });
-  }
-
-  function testfunc() {
-    console.log('teeeeest');
   }
 }

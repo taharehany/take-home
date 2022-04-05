@@ -5,9 +5,10 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   mode: 'development',
-  entry: {
-    index: './index.js',
-  },
+  // entry: {
+  //   index: './index.js',
+  // },
+  entry: ["regenerator-runtime/runtime.js", './index.js'],
   devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
@@ -15,11 +16,11 @@ module.exports = {
       template: 'app/index.html',
       filename: 'index.html',
     }),
-    new ESLintPlugin({
-      failOnError: true,
-      emitWarning: false,
-      outputReport: true
-    }),
+    // new ESLintPlugin({
+    //   failOnError: true,
+    //   emitWarning: false,
+    //   outputReport: true
+    // }),
     new VueLoaderPlugin(),
   ],
   devServer: {
